@@ -81,7 +81,7 @@ console.log(airPlane.startsWith('Air'))
 
 //Baggae check practice exercise
 
-//Split Method - Most powerfull
+//Split and Join Method - Most powerfull
 
 console.log('a+very+large+string'.split('+'))
 console.log('Suraj Gupta'.split(' '))
@@ -89,3 +89,23 @@ console.log('Suraj Gupta'.split(' '))
 const [firstName, lastName] = 'Suraj Gupta'.split(' ');
 const newName = ['Mr', firstName, lastName.toUpperCase()].join(' ');
 console.log(newName)
+
+const capitalizeName = function(name){
+    const names = name.split(' ')
+    const nameUpper = []
+    for (const n of names){
+       nameUpper.push(n[0].toUpperCase() + n.slice(1));
+    }
+    console.log(nameUpper.join(' '))
+}
+
+capitalizeName('jessica ann smith davis');
+
+//Padding
+const paddname = 'Go to gate number 23'
+console.log(paddname.padStart(30, '+'));
+console.log(paddname.padEnd(30, '+'));
+
+//Repeat
+const repeatName = 'My name is Khan'
+console.log(repeatName.repeat(5))
