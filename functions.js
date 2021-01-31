@@ -140,3 +140,29 @@ console.log(addTax(0.18, 200))
 const addGST = addTax.bind(null, 0.18)
 console.log(addGST(850000))
 
+//CLOSURE -> A closure is the closed-over variable environment of the execution context in which the function was created, even that execution context is gone. (Backpack -> has all variables)
+// A function has access to the variable environment of the execution context  in which it was created.
+const secureBooking = function(){
+    let passangerCount = 0;
+
+    return function(){
+        passangerCount++;
+        console.log(passangerCount);
+    }
+}
+const booker = secureBooking();
+booker();
+console.dir(booker);
+
+let f;
+
+const g = function(){
+    const a =23;
+    f = function(){
+        console.log(a * 3)
+    }
+}
+
+g();
+f();
+
